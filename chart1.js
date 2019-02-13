@@ -4,7 +4,7 @@ let outputObj = {
 }
 
 var Loading = function(){
-  console.log("Here");
+  console.log("Here")
   convertRow = function(row, index){
     let out = {};
 
