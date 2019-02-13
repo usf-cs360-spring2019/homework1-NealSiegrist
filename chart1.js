@@ -4,6 +4,7 @@ let outputObj = {
 }
 
 var Loading = function(){
+  console.log("Here");
   convertRow = function(row, index){
     let out = {};
 
@@ -33,6 +34,7 @@ var Loading = function(){
   d3.csv("/input/chart1-crime-count.csv", convertRow).then(() => {
     console.log("Ended");
   }).then(function() {
+    console.log("loaded File");
     outputObj.days.reverse();
     outputObj.incident.reverse();
   }).then(drawBarChart);
