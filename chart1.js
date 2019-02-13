@@ -134,4 +134,4 @@ var drawBarChart = function() {
           .text("Incident Date");
 }
 
-Loading();
+//Loading();
