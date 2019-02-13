@@ -31,7 +31,7 @@ var Loading = function(){
     }
     return out;
   }
-  d3.csv("/input/chart1-crime-count.csv", convertRow).then(() => {
+  d3.csv("input/chart1-crime-count.csv", convertRow).then(() => {
     console.log("Ended");
   }).then(function() {
     console.log("loaded File");
