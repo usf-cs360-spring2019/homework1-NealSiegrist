@@ -11,6 +11,7 @@
   <!-- bulma 0.7.2 and font awesome v5.7.1 -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.2/css/bulma.min.css" integrity="sha256-2pUeJf+y0ltRPSbKOeJh09ipQFYxUdct5nTY6GAXswA=" crossorigin="anonymous" />
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+  <link rel="stylesheet" href="styles/css-styles.css">
 </head>
 
 <!-- body -->
@@ -53,6 +54,15 @@
             </a>
           </div>
 
+          <div id="main-navbar" class="navbar-brand">
+            <a class="navbar-item" href="#tableau">
+              <span class="icon">
+                <i class="fas"></i>
+              </span>
+              <span>Tableau Images</span>
+            </a>
+          </div>
+
           <div class="navbar-end">
             <a class="navbar-item" href="#grade">
               <span class="icon">
@@ -86,7 +96,7 @@
       <h3>Interpretation</h3>
 
       <p>
-        If appropriate, provide a brief discussion of how to interpret this visualization (e.g. how the data is encoded) and how to interact with this visualization. Some of this discussion may not be necessary depending on the legends provided with the visualization.
+        This visualization represents the number of incidents that occured on each day during the month of December 2018 in San Francisco, California. One noticeable outlier from the data is the low number of crimes on Christmas (Dec 25).
       </p>
 
       <h3>Discussion</h3>
@@ -193,6 +203,18 @@
     </div>
   </section>
 
+  <section id="tableau" class="test">
+    <div class="tableau-photo">
+      <h1 class="tableau-header pic-head"><strong>Tableau - Visualization 1</strong></h1>
+      <p class="tableau-header">My Name: Neal Siegrist</p>
+      <p class="tableau-header">This visualization is representing the number of crimes that occured
+      on each day for December 2018. Christmas (Dec 25) stands out with the abnormal
+      amount of low crime.</p>
+      <img src="tableau-images/chart1.png">
+    </div>
+  </section>
+
+
   <!-- about section -->
   <!-- todo: can fill in, or link to an about page you use for all assignments -->
   <section class="section">
@@ -212,12 +234,13 @@
         <div class="media-content">
             <p>
               <!-- todo: replace with your information -->
-              <strong>Full Name</strong>
+              <strong>Neal Siegrist</strong>
               <br/>
-              This is a good place to place a brief biography describing your interests and skills, a professional profile photo, and/or links to your Github, Linkedin, and other <em>professional</em> social media accounts.
+              I am a CS student at the University of San Francisco. I enjoy tackling
+              complex problems and exploring the bay area!
               <br/>
               <!-- find brand icons at: https://fontawesome.com/icons?d=gallery&s=brands&m=free -->
-              <a href="https://github.com/">
+              <a href="https://github.com/NealSiegrist">
                 <span class="fab fa-github"></span>
                 <span>Github</span>
               </a>
