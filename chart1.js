@@ -4,7 +4,7 @@ let outputObj = {
 }
 
 var Loading = function(){
-  console.log("Here")
+  //console.log("Here")
   convertRow = function(row, index){
     let out = {};
 
@@ -26,15 +26,15 @@ var Loading = function(){
           outputObj.incident.push(+str);
           break;
         default:
-          console.log(col);
+          //console.log(col);
       }
     }
     return out;
   }
   d3.csv("input/chart1-crime-count.csv", convertRow).then(() => {
-    console.log("Ended");
+    //console.log("Ended");
   }).then(function() {
-    console.log("loaded File");
+    //console.log("loaded File");
     outputObj.days.reverse();
     outputObj.incident.reverse();
   }).then(drawBarChart);
