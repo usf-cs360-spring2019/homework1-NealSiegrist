@@ -4,7 +4,7 @@ let outputObj2 = {
 }
 
 var loadingChart2 = function() {
-  console.log("Here");
+  //console.log("Here");
   convertRow = function(row, index) {
     let out2 = {};
 
@@ -14,17 +14,17 @@ var loadingChart2 = function() {
           outputObj2.category.push(row[col]);
           break;
         case "numrec":
-          outputObj2.numrec.push(row[col]);
+          outputObj2.numrec.push(+row[col]);
           break;
         default:
-          console.log("in default");
+          //console.log("in default");
           break;
       }
     }
     return out2;
   }
   d3.csv("input/chart2-crime-type.csv", convertRow).then(() => {}).then(function() {
-    console.log("loaded file");
+    //console.log("loaded file");
     //outputObj2.numrec.reverse();
     outputObj2.category.reverse();
   }).then(drawBarChart2);
@@ -102,16 +102,16 @@ var drawBarChart2 = function() {
                 .attr("fill", "blue");
 
             bars2.transition()
-              .attr("y", function(d) { return countScale(d.value); })
-              .attr("height", function(d) { return plotHeight - countScale(d.value); });
+              .attr("y", function(d) { return crimeCount(d.value); })
+              .attr("height", function(d) { return plotHeight - crimeCount(d.value); });
 
             bars2.exit()
               .each(function(d, i, nodes) {
                 console.log("Removing bar for:", d.key);
               })
               .transition()
-              .attr("y", function(d) { return countScale(countMin); })
-              .attr("height", function(d) { return plotHeight - countScale(countMin); })
+              .attr("y", function(d) { return crimeCount(countMin); })
+              .attr("height", function(d) { return plotHeight - crimeCount(countMin); })
               .remove();
 
 

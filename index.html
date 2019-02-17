@@ -6,6 +6,22 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
+  <style type="text/css">
+/* 13. Basic Styling with CSS */
+
+/* Style the lines by removing the fill and applying a stroke */
+.line {
+    fill: none;
+    stroke: #ffab00;
+    stroke-width: 3;
+}
+
+.overlay {
+  fill: none;
+  pointer-events: all;
+}
+</style>
+
   <title>CS 360/560 Spring 2019</title>
 
   <!-- bulma 0.7.2 and font awesome v5.7.1 -->
@@ -84,7 +100,7 @@
     </div>
   </section>
 
-  //First Graph
+  <!--First Graph-->
   <section class="section">
     <div class="container content">
       <!-- todo: modify as necessary (or move visualizations to separate pages) -->
@@ -113,11 +129,40 @@
     </div>
   </section>
 
-  //Second Graph
+  <!--Second Graph-->
   <section class="section">
     <div class="container content">
       <!-- todo: modify as necessary (or move visualizations to separate pages) -->
       <h2>Visualization 2</h2>
+
+      <svg class="chart1" width="100%" height="400" style="background-color: whitesmoke; border: 1px solid black;">
+      </svg>
+
+      <h3>Interpretation</h3>
+
+      <p>
+        This visualization represents the number of incidents that occured on each day during the month of December 2018 in San Francisco, California. One noticeable outlier from the data is the low number of crimes on Christmas (Dec 25).
+      </p>
+
+      <h3>Discussion</h3>
+
+      <p>
+        If appropriate, provide a brief discussion of the primary goal and findings of the visualization, any challenges encountered creating the visualization, and any other context as required by the assignment.
+      </p>
+
+      <h3>Credit</h3>
+
+      <p>
+        If appropriate, provide credit for the dataset, any code used, and design inspirations here. Unsufficient discussion here is a violation of the <a href="/syllabus.html#cheating-policy">academic honesty policy</a> and may result in an F grade for the assignment or the <em>entire</em> course.
+      </p>
+    </div>
+  </section>
+
+  <!--Third Graph-->
+  <section class="section">
+    <div class="container content">
+      <!-- todo: modify as necessary (or move visualizations to separate pages) -->
+      <h2>Visualization 3</h2>
 
       <svg class="chart1" width="100%" height="400" style="background-color: whitesmoke; border: 1px solid black;">
       </svg>
@@ -307,9 +352,11 @@
 <script src="https://d3js.org/d3.v5.js"></script>
 <script src="chart1.js"></script>
 <script src="chart2.js"></script>
+<script src="chart3.js"></script>
 <script>
   Loading();
   loadingChart2();
+  loadingChart3();
 </script>
 
 <!-- end body and html -->
