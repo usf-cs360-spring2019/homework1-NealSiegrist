@@ -59,6 +59,10 @@ var drawBarChart = function() {
       .range([plotHeight, 0])
       .nice();
 
+      var color = d3.scaleLinear()
+        .domain([259, 457])
+        .range(["rgb(173, 216, 230)", "rgb(70, 130, 180)"]);
+
       let dayScale = d3.scaleBand()
           .domain(outputObj.days) // all letters (not using the count here)
           .rangeRound([25, plotWidth])
@@ -94,6 +98,7 @@ var drawBarChart = function() {
 
             bars.enter().append("rect")
               .attr("class", "bar")
+              .attr("fill", function(d, i) { return color(outputObj.incident[i])})
               .attr("width", dayScale.bandwidth())
               .attr("x", function(d, i) {
                 return dayScale(outputObj.days[i]);
@@ -104,8 +109,6 @@ var drawBarChart = function() {
               .attr("height", function(d, i) {
                 return plotHeight - numIncidentScale(outputObj.incident[i]);
               })
-
-              .attr("fill", "blue");
 
             bars.transition()
               .attr("y", function(d) { return countScale(d.value); })
