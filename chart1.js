@@ -61,7 +61,7 @@ var drawBarChart = function() {
 
       var color = d3.scaleLinear()
         .domain([259, 457])
-        .range(["rgb(175, 185, 255)", "rgb(19, 100, 214)"]);
+        .range(["rgb(218, 220, 242)", "rgb(19, 100, 214)"]);
 
       let dayScale = d3.scaleBand()
           .domain(outputObj.days) // all letters (not using the count here)
