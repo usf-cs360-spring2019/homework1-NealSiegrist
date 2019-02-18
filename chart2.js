@@ -4,7 +4,6 @@ let outputObj2 = {
 }
 
 var loadingChart2 = function() {
-  //console.log("Here");
   convertRow = function(row, index) {
     let out2 = {};
 
@@ -17,7 +16,6 @@ var loadingChart2 = function() {
           outputObj2.numrec.push(+row[col]);
           break;
         default:
-          //console.log("in default");
           break;
       }
     }
@@ -71,7 +69,6 @@ var drawBarChart2 = function() {
 
               let yGroup = plot.append("g").attr("id", "y-axisChart2");
               yGroup.call(yAxis);
-              //yGroup.attr("transform", "translate(" + 25 + ",0)");
             }
             else {
               plot.select("g#y-axisChart2").call(yAxis);

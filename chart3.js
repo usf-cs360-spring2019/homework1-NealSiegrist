@@ -25,14 +25,11 @@ var loadingChart3 = function() {
   }
   d3.csv("input/chart3-line.csv", convertRow).then(() => {}).then(function() {
     console.log("loaded file");
-    //outputObj2.numrec.reverse();
-    //outputObj3.category.reverse();
   }).then(drawBarChart3);
 }
 
 
 var drawBarChart3 = function() {
-  // 2. Use the margin convention practice
   var svg = d3.select("body").select("section:nth-child(4)").select("div").select("svg");
   let bounds = svg.node().getBoundingClientRect();
 
@@ -40,37 +37,28 @@ var drawBarChart3 = function() {
     , width = bounds.width - margin.right - margin.left
     , height = bounds.height - margin.top - margin.bottom;
 
-  // The number of datapoints
   var n = 24;
 
-  // 5. X scale will use the index of our data
   var xScale = d3.scaleLinear()
       .domain([0, n-1]) // input
       .range([0, width])
       .nice(); // output
 
-  // 6. Y scale will use the randomly generate number
   var yScale = d3.scaleLinear()
       .domain([0, 800]) // input
       .range([height, 0])
       .nice();
 
-  // 7. d3's line generator
   var line = d3.line()
-      .x(function(d, i) { return xScale(i); }) // set the x values for the line generator
-      .y(function(d) { return yScale(d.y); }) // set the y values for the line generator
-      //.curve(d3.curveMonotoneX) // apply smoothing to the line
+      .x(function(d, i) { return xScale(i); })
+      .y(function(d) { return yScale(d.y); })
 
-  // 8. An array of objects of length N. Each object has key -> value pair, the key being "y" and the value is a random number
-  //var dataset = d3.range(n).map(function(d) { return {"y": d3.randomUniform(1)() } })
     var dataset = d3.range(n).map(function(d, i) { return {"y": outputObj3.numrecs[i] } })
-  // 1. Add the SVG to the page and employ #2
       svg.attr("width", width + margin.left + margin.right)
       svg.attr("height", height + margin.top + margin.bottom)
     svg.append("g")
       svg.attr("transform", "translate(0" + "," + margin.top + ")");
 
-  // 3. Call the x axis in a group tag
   svg.append("g")
       .attr("class", "x axis")
       .attr("transform", "translate(60," + 378 + ")")

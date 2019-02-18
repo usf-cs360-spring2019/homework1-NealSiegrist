@@ -4,7 +4,6 @@ let outputObj = {
 }
 
 var Loading = function(){
-  //console.log("Here")
   convertRow = function(row, index){
     let out = {};
 
@@ -26,15 +25,12 @@ var Loading = function(){
           outputObj.incident.push(+str);
           break;
         default:
-          //console.log(col);
       }
     }
     return out;
   }
   d3.csv("input/chart1-crime-count.csv", convertRow).then(() => {
-    //console.log("Ended");
   }).then(function() {
-    //console.log("loaded File");
     outputObj.days.reverse();
     outputObj.incident.reverse();
   }).then(drawBarChart);
@@ -64,7 +60,7 @@ var drawBarChart = function() {
         .range(["rgb(218, 220, 242)", "rgb(19, 100, 214)"]);
 
       let dayScale = d3.scaleBand()
-          .domain(outputObj.days) // all letters (not using the count here)
+          .domain(outputObj.days)
           .rangeRound([25, plotWidth])
           .paddingInner(0.1);
 
@@ -138,5 +134,3 @@ var drawBarChart = function() {
           .style("text-anchor", "middle")
           .text("Incident Date");
 }
-
-//Loading();
