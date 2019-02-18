@@ -24,13 +24,9 @@ var loadingChart2 = function() {
     return out2;
   }
   d3.csv("input/chart2-crime-type.csv", convertRow).then(() => {}).then(function() {
-    //console.log("loaded file");
-    //outputObj2.numrec.reverse();
     outputObj2.category.reverse();
   }).then(drawBarChart2);
 }
-
-//loadingChart2();
 
 var drawBarChart2 = function() {
   let countMin = 0;
@@ -39,7 +35,7 @@ var drawBarChart2 = function() {
   let margin = {
     top: 15,
     right: 35,
-    bottom: 30,
+    bottom: 50,
     left: 200
   };
     let bounds = svg.node().getBoundingClientRect();
@@ -93,7 +89,7 @@ var drawBarChart2 = function() {
                   return categories(outputObj2.numrec[i]);
                 })
                 .attr("y", function(d, i) {
-                  return plotHeight - categories(outputObj2.category[i]);
+                  return plotHeight - 4 - categories(outputObj2.category[i]);
                 })
                 .attr("height", function(d, i) {
                   return categories.bandwidth();
@@ -121,4 +117,11 @@ var drawBarChart2 = function() {
                            (10 + margin.top) + ")")
           .style("text-anchor", "middle")
           .text("Incident Category");
+
+          svg.append("text")
+            .attr("transform",
+              "translate(" + (plotWidth/2) + " ," +
+                             (390) + ")")
+            .style("text-anchor", "middle")
+            .text("Number of Records");
 }
