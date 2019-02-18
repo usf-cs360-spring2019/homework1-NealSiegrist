@@ -11,3 +11,18 @@
 .pic-head {
   font-size: 30px;
 }
+
+.line {
+    fill: none;
+    stroke: #ffab00;
+    stroke-width: 3;
+}
+
+.overlay {
+  fill: none;
+  pointer-events: all;
+}
+
+#test1 {
+  float: left;
+}
