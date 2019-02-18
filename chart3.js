@@ -73,19 +73,31 @@ var drawBarChart3 = function() {
   // 3. Call the x axis in a group tag
   svg.append("g")
       .attr("class", "x axis")
-      .attr("transform", "translate(35," + 370 + ")")
-      .call(d3.axisBottom(xScale).ticks(23)); // Create an axis component with d3.axisBottom
+      .attr("transform", "translate(60," + 378 + ")")
+      .call(d3.axisBottom(xScale).ticks(23));
 
-  // 4. Call the y axis in a group tag
   svg.append("g")
       .attr("class", "y axis")
-      .attr("transform", "translate(35" + ",15)")
-      .call(d3.axisLeft(yScale)); // Create an axis component with d3.axisLeft
+      .attr("transform", "translate(60" + ",23)")
+      .call(d3.axisLeft(yScale));
 
-  // 9. Append the path, bind the data, and call the line generator
   svg.append("path")
-      .datum(dataset) // 10. Binds data to the line
-      .attr("class", "line") // Assign a class for styling
-      .attr("transform", "translate(" + 36 + ",15)")
-      .attr("d", line); // 11. Calls the line generator
+      .datum(dataset)
+      .attr("class", "line")
+      .attr("transform", "translate(" + 61 + ",23)")
+      .attr("d", line);
+
+  svg.append("text")
+      .attr("transform", "rotate(-90)")
+      .attr("y", 0)
+      .attr("x",0 - (height / 2))
+      .attr("dy", "1em")
+      .style("text-anchor", "middle")
+      .text("Number of Records");
+
+  svg.append("text")
+      .attr("transform","translate(" + (width/2) + " ," +
+                         (10 + margin.top) + ")")
+      .style("text-anchor", "middle")
+      .text("Incident Time");
 }
